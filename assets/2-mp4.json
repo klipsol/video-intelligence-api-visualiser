@@ -62750,7 +62750,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.92826509,
@@ -63006,7 +63006,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.79000974,
@@ -63558,7 +63558,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.78575212,
@@ -63764,7 +63764,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.9743256,
@@ -64194,7 +64194,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.99688435,
@@ -64397,7 +64397,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.99704993,
@@ -64464,7 +64464,7 @@
 				{
 					"entity": {
 						"entity_id": "/m/01g317",
-						"description": "person",
+						"description": "female",
 						"language_code": "en-US"
 					},
 					"confidence": 0.99713445,
