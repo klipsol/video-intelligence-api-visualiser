@@ -376,12 +376,6 @@
             video.src = url
         }
 
-        function load_video_dragged(event) {
-            const file = this.files[0]
-            const file_url = URL.createObjectURL(file)
-            load_video_from_url(file_url)
-        }
-
         function load_json_from_url(url) {
             var json = null
             $.ajax({
@@ -405,16 +399,8 @@
 
         }
 
-        function load_json_dragged(event) {
-            const file = this.files[0]
-            const file_url = URL.createObjectURL(file)
-            load_json_from_url(file_url);
-        }
-
         var json_data = {}
         const video = document.getElementById('video')
-        const video_input = document.getElementById('video_input')
-        const json_input = document.getElementById('json_input')
 
 
         video.oncanplay = function () {
@@ -424,26 +410,6 @@
             app.video_info.height = 500
             app.video_info.width = 800
         }
-
-        // function drag_enter(ev) {
-        //     ev.preventDefault()
-        // }
-
-        // function drop_video(ev) {
-        //     ev.preventDefault()
-        //     video_input.files = ev.dataTransfer.files
-        //     video_input.dispatchEvent(new Event('change'))
-
-        // }
-
-        // function drop_json(ev) {
-        //     ev.preventDefault()
-        //     json_input.files = ev.dataTransfer.files
-        //     json_input.dispatchEvent(new Event('change'))
-        // }
-
-        video_input.addEventListener('change', load_video_dragged, false)
-        json_input.addEventListener('change', load_json_dragged, false)
 
         load_json_from_url("assets/2-mp4.json")
         load_video_from_url("assets/2.mp4")
@@ -458,9 +424,6 @@
             }
 
         }
-
-
-
     </script>
 
 </body>
