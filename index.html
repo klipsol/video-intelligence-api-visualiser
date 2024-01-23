@@ -6,9 +6,7 @@
     <title>Video Intelligence API Visualiser</title>
     <link rel="icon" type="image/png" href="assets/icon.png" />
 
-    <meta name="description" content="Interactive visualiser for the Google Cloud Video Intelligence API.">
-    <meta name="keywords" content="google cloud, video, intelligence, api, video intelligence api, google cloud">
-
+    <meta name="description" content="Interactive visualiser for the Video Intelligence API.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -20,17 +18,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
-
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N80GH8KX9W"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-N80GH8KX9W', { client_storage: 'none' });
-
-    </script>
 
 
     <style>
@@ -324,17 +311,9 @@
                 json_data: {},
                 video_info: { width: 800, height: 500, length: 252 },
                 video_length: 252,
-                current_view: 'Label Detection',
+                current_view: 'Object Tracking',
                 title_ids_dict: {
-                    'Label Detection': 'shot_label_annotations',
-                    'Shot Detection': 'shot_annotations',
                     'Object Tracking': 'object_annotations',
-                    'Person Detection': 'person_detection_annotations',
-                    'Face Detection': 'face_detection_annotations',
-                    'Logo Recognition': 'logo_recognition_annotations',
-                    'Speech Transcription': 'speech_transcriptions',
-                    'Text Detection': 'text_annotations',
-                    'Explicit Content Detection': 'explicit_annotation'
                 }
             }, methods: {
                 jump_video: function (event_data) {
@@ -376,9 +355,7 @@
                     return features
                 }
             }
-        })
-
-
+        });
 
         const URL = window.URL || window.webkitURL
 
@@ -416,8 +393,6 @@
                 }
             })
             json_data = json
-
-            console.log(json_data)
             app.json_data = json_data
 
             console.log('keys ->>', Object.keys(json_data))
@@ -471,11 +446,11 @@
         video_input.addEventListener('change', load_video_dragged, false)
         json_input.addEventListener('change', load_json_dragged, false)
 
-        load_json_from_url("assets/test_json.json")
-        load_video_from_url("assets/test_video.mp4")
+        load_json_from_url("assets/2-mp4.json")
+        load_video_from_url("assets/2.mp4")
 
 
-        // check for hash code in url 
+        // check for hash code in url
 
         if (app.$route.hash) {
             const hash_value = decodeURI(app.$route.hash.substring(1))
