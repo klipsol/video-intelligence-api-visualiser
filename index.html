@@ -163,14 +163,14 @@
             </div>
         </header>
 
-        <div>
+        <div style="display: flex">
 
             <div id="video-conatiner">
                 <canvas id="my_canvas" width="800" height="500"></canvas>
                 <video id="video" controls autoplay></video>
             </div>
 
-            <div>
+            <div style="flex:1">
                 <annotations-nav v-bind:title_ids_dict="title_ids_dict" v-bind:detected_features="detected_features"
                     v-bind:current_view="current_view" v-on:nav-clicked="set_current_view">
                 </annotations-nav>
