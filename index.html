@@ -178,10 +178,7 @@
                 <object-tracking-viz v-if="current_view == 'Object Tracking'" id="object_tracks" v-bind:json_data="json_data"
                     v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></object-tracking-viz>
 
-                <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection" v-bind:json_data="json_data"
-                    v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-                </person-detection-viz>
-                <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection" v-bind:json_data="json_data"
+                    <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection" v-bind:json_data="json_data"
                     v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
                 </text-detection-viz>
             </div>
@@ -193,9 +190,9 @@
         <!-- <div id="upload-data">
             <h5>Try with your data</h5>
             <p>You can analyse a video by following the instructions <a target="_blank"
-                    href="https://cloud.google.com/video-intelligence-storage-trigger">here</a>.
+                href="https://cloud.google.com/video-intelligence-storage-trigger">here</a>.
                 Also see the script <a target="_blank"
-                    href="https://github.com/ZackAkil/video-intelligence-api-visualiser/blob/main/run_video_intelligence.py">here</a>
+                href="https://github.com/ZackAkil/video-intelligence-api-visualiser/blob/main/run_video_intelligence.py">here</a>
                 if you want to run all features at once.
             </p>
 
@@ -221,6 +218,9 @@
         <!-- <label-detection-viz v-if="current_view == 'Label Detection'" id="label_detection" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></label-detection-viz>
 
+            <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection" v-bind:json_data="json_data"
+                v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
+            </person-detection-viz>
         <shot-detection-viz v-if="current_view == 'Shot Detection'" id="shot_detection" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:shot-clicked="jump_video"></shot-detection-viz>
 
@@ -251,10 +251,10 @@
     <script src="utils/utils.js"></script>
 
     <script src="components/object_tracking.js"></script>
-    <script src="components/person_detection.js"></script>
     <script src="components/text_detection.js"></script>
     <!-- <script src="components/label_detection.js"></script>
     <script src="components/shot_detection.js"></script>
+    <script src="components/person_detection.js"></script>
     <script src="components/speech_transcription.js"></script>
     <script src="components/face_detection.js"></script>
     <script src="components/logo_recognition.js"></script>
@@ -322,7 +322,7 @@
                 current_view: 'Object Tracking',
                 title_ids_dict: {
                     'Object Tracking': 'object_annotations',
-                    'Person Detection': 'person_detection_annotations',
+                    // 'Person Detection': 'person_detection_annotations',
                     'Text Detection': 'text_annotations',
                 }
             }, methods: {
