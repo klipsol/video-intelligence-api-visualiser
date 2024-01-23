@@ -395,7 +395,6 @@
             json_data = json
             app.json_data = json_data
 
-            console.log('keys ->>', Object.keys(json_data))
             // check validity of json
             if (!('annotation_results' in json_data)) {
                 alert("⚠️ Sorry, json output from shell not supported ⚠️ To fix set the 'output_uri' configuration when calling the Video Intelligence API so that it outputs a .json file to Google Cloud Storage, and then download that .json file. Find links to example script at the top right of the screen.")
@@ -426,22 +425,22 @@
             app.video_info.width = 800
         }
 
-        function drag_enter(ev) {
-            ev.preventDefault()
-        }
+        // function drag_enter(ev) {
+        //     ev.preventDefault()
+        // }
 
-        function drop_video(ev) {
-            ev.preventDefault()
-            video_input.files = ev.dataTransfer.files
-            video_input.dispatchEvent(new Event('change'))
+        // function drop_video(ev) {
+        //     ev.preventDefault()
+        //     video_input.files = ev.dataTransfer.files
+        //     video_input.dispatchEvent(new Event('change'))
 
-        }
+        // }
 
-        function drop_json(ev) {
-            ev.preventDefault()
-            json_input.files = ev.dataTransfer.files
-            json_input.dispatchEvent(new Event('change'))
-        }
+        // function drop_json(ev) {
+        //     ev.preventDefault()
+        //     json_input.files = ev.dataTransfer.files
+        //     json_input.dispatchEvent(new Event('change'))
+        // }
 
         video_input.addEventListener('change', load_video_dragged, false)
         json_input.addEventListener('change', load_json_dragged, false)
