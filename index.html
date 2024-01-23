@@ -204,6 +204,12 @@
         <object-tracking-viz v-if="current_view == 'Object Tracking'" id="object_tracks" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></object-tracking-viz>
 
+        <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection"
+            v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
+        </person-detection-viz>
+        <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection" v-bind:json_data="json_data"
+            v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
+        </text-detection-viz>
         <!-- <label-detection-viz v-if="current_view == 'Label Detection'" id="label_detection" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></label-detection-viz>
 
@@ -214,9 +220,6 @@
             v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:word-clicked="jump_video">
         </speech-transcription-viz>
 
-        <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection"
-            v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-        </person-detection-viz>
 
         <face-detection-viz v-if="current_view == 'Face Detection'" id="face_detection" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
@@ -226,9 +229,6 @@
             v-bind:json_data="json_data" v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
         </logo-recognition-viz>
 
-        <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection" v-bind:json_data="json_data"
-            v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-        </text-detection-viz>
 
         <explicit-content-detection-viz v-if="current_view == 'Explicit Content Detection'"
             id="explicit_content_detection" v-bind:json_data="json_data" v-bind:video_info="video_info"
@@ -243,13 +243,13 @@
     <script src="utils/utils.js"></script>
 
     <script src="components/object_tracking.js"></script>
+    <script src="components/person_detection.js"></script>
+    <script src="components/text_detection.js"></script>
     <!-- <script src="components/label_detection.js"></script>
     <script src="components/shot_detection.js"></script>
     <script src="components/speech_transcription.js"></script>
-    <script src="components/person_detection.js"></script>
     <script src="components/face_detection.js"></script>
     <script src="components/logo_recognition.js"></script>
-    <script src="components/text_detection.js"></script>
     <script src="components/explicit_content_detection.js"></script> -->
 
     <script>
@@ -314,6 +314,8 @@
                 current_view: 'Object Tracking',
                 title_ids_dict: {
                     'Object Tracking': 'object_annotations',
+                    'Person Detection': 'person_detection_annotations',
+                    'Text Detection': 'text_annotations',
                 }
             }, methods: {
                 jump_video: function (event_data) {
