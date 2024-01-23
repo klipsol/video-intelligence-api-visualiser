@@ -170,7 +170,7 @@
 
 
 
-        <div id="upload-data">
+        <!-- <div id="upload-data">
             <h5>Try with your data</h5>
             <p>You can analyse a video by following the instructions <a target="_blank"
                     href="https://cloud.google.com/video-intelligence-storage-trigger">here</a>.
@@ -194,7 +194,7 @@
         <div v-if="data_misaligned" class="data-warning">
             It looks like the json data dosn't align with the video file, are you sure you have all of the right files
             uploaded?
-        </div>
+        </div> -->
 
 
         <annotations-nav v-bind:title_ids_dict="title_ids_dict" v-bind:detected_features="detected_features"
@@ -204,7 +204,7 @@
         <object-tracking-viz v-if="current_view == 'Object Tracking'" id="object_tracks" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></object-tracking-viz>
 
-        <label-detection-viz v-if="current_view == 'Label Detection'" id="label_detection" v-bind:json_data="json_data"
+        <!-- <label-detection-viz v-if="current_view == 'Label Detection'" id="label_detection" v-bind:json_data="json_data"
             v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></label-detection-viz>
 
         <shot-detection-viz v-if="current_view == 'Shot Detection'" id="shot_detection" v-bind:json_data="json_data"
@@ -233,7 +233,7 @@
         <explicit-content-detection-viz v-if="current_view == 'Explicit Content Detection'"
             id="explicit_content_detection" v-bind:json_data="json_data" v-bind:video_info="video_info"
             v-on:shot-clicked="jump_video">
-        </explicit-content-detection-viz>
+        </explicit-content-detection-viz> -->
 
     </div>
 
@@ -243,14 +243,14 @@
     <script src="utils/utils.js"></script>
 
     <script src="components/object_tracking.js"></script>
-    <script src="components/label_detection.js"></script>
+    <!-- <script src="components/label_detection.js"></script>
     <script src="components/shot_detection.js"></script>
     <script src="components/speech_transcription.js"></script>
     <script src="components/person_detection.js"></script>
     <script src="components/face_detection.js"></script>
     <script src="components/logo_recognition.js"></script>
     <script src="components/text_detection.js"></script>
-    <script src="components/explicit_content_detection.js"></script>
+    <script src="components/explicit_content_detection.js"></script> -->
 
     <script>
 
