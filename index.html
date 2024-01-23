@@ -163,26 +163,30 @@
             </div>
         </header>
 
-        <div id="video-conatiner">
-            <canvas id="my_canvas" width="800" height="500"></canvas>
-            <video id="video" controls autoplay></video>
-        </div>
-
         <div>
-            <annotations-nav v-bind:title_ids_dict="title_ids_dict" v-bind:detected_features="detected_features"
-                v-bind:current_view="current_view" v-on:nav-clicked="set_current_view">
-            </annotations-nav>
 
-            <object-tracking-viz v-if="current_view == 'Object Tracking'" id="object_tracks" v-bind:json_data="json_data"
-                v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></object-tracking-viz>
+            <div id="video-conatiner">
+                <canvas id="my_canvas" width="800" height="500"></canvas>
+                <video id="video" controls autoplay></video>
+            </div>
 
-            <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection" v-bind:json_data="json_data"
-                v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-            </person-detection-viz>
-            <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection" v-bind:json_data="json_data"
-                v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
-            </text-detection-viz>
+            <div>
+                <annotations-nav v-bind:title_ids_dict="title_ids_dict" v-bind:detected_features="detected_features"
+                    v-bind:current_view="current_view" v-on:nav-clicked="set_current_view">
+                </annotations-nav>
+
+                <object-tracking-viz v-if="current_view == 'Object Tracking'" id="object_tracks" v-bind:json_data="json_data"
+                    v-bind:video_info="video_info" v-on:segment-clicked="jump_video"></object-tracking-viz>
+
+                <person-detection-viz v-if="current_view == 'Person Detection'" id="person_detection" v-bind:json_data="json_data"
+                    v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
+                </person-detection-viz>
+                <text-detection-viz v-if="current_view == 'Text Detection'" id="text_detection" v-bind:json_data="json_data"
+                    v-bind:video_info="video_info" v-on:segment-clicked="jump_video">
+                </text-detection-viz>
+            </div>
         </div>
+
 
 
 
